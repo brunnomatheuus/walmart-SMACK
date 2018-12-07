@@ -1,0 +1,48 @@
+2018-12-05 22:01:03,758 [WARN] from akka.util.ManifestInfo in application-akka.actor.default-dispatcher-4 - Detected possible incompatible versions on the classpath. Please note that a given Akka version MUST be the same across all modules of Akka that you are using, e.g. if you use [2.5.18] all other modules that are released together MUST be of the same version. Make sure you're using a compatible set of libraries.Possibly conflicting versions [2.5.18, 2.5.17] in libraries [akka-persistence:2.5.18, akka-protobuf:2.5.18, akka-actor:2.5.18, akka-slf4j:2.5.17, akka-stream:2.5.17]
+2018-12-05 22:01:03,818 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-12-05 22:01:03,969 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev)
+2018-12-05 22:02:17,474 [WARN] from akka.util.ManifestInfo in application-akka.actor.default-dispatcher-4 - Detected possible incompatible versions on the classpath. Please note that a given Akka version MUST be the same across all modules of Akka that you are using, e.g. if you use [2.5.18] all other modules that are released together MUST be of the same version. Make sure you're using a compatible set of libraries.Possibly conflicting versions [2.5.18, 2.5.17] in libraries [akka-persistence:2.5.18, akka-protobuf:2.5.18, akka-actor:2.5.18, akka-slf4j:2.5.17, akka-stream:2.5.17]
+2018-12-05 22:02:17,511 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-9 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-12-05 22:02:17,543 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-9 - Application started (Dev)
+2018-12-05 22:03:55,848 [WARN] from akka.util.ManifestInfo in application-akka.actor.default-dispatcher-6 - Detected possible incompatible versions on the classpath. Please note that a given Akka version MUST be the same across all modules of Akka that you are using, e.g. if you use [2.5.18] all other modules that are released together MUST be of the same version. Make sure you're using a compatible set of libraries.Possibly conflicting versions [2.5.18, 2.5.17] in libraries [akka-persistence:2.5.18, akka-protobuf:2.5.18, akka-actor:2.5.18, akka-slf4j:2.5.17, akka-stream:2.5.17]
+2018-12-05 22:03:55,872 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-12-05 22:03:55,914 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev)
+2018-12-05 22:04:29,130 [WARN] from akka.util.ManifestInfo in application-akka.actor.default-dispatcher-6 - Detected possible incompatible versions on the classpath. Please note that a given Akka version MUST be the same across all modules of Akka that you are using, e.g. if you use [2.5.18] all other modules that are released together MUST be of the same version. Make sure you're using a compatible set of libraries.Possibly conflicting versions [2.5.18, 2.5.17] in libraries [akka-persistence:2.5.18, akka-protobuf:2.5.18, akka-actor:2.5.18, akka-slf4j:2.5.17, akka-stream:2.5.17]
+2018-12-05 22:04:29,152 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-6 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-12-05 22:04:29,188 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-6 - Application started (Dev)
+2018-12-05 22:12:25,624 [WARN] from akka.util.ManifestInfo in application-akka.actor.default-dispatcher-5 - Detected possible incompatible versions on the classpath. Please note that a given Akka version MUST be the same across all modules of Akka that you are using, e.g. if you use [2.5.18] all other modules that are released together MUST be of the same version. Make sure you're using a compatible set of libraries.Possibly conflicting versions [2.5.18, 2.5.17] in libraries [akka-persistence:2.5.18, akka-protobuf:2.5.18, akka-actor:2.5.18, akka-slf4j:2.5.17, akka-stream:2.5.17]
+2018-12-05 22:12:25,641 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-12 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-12-05 22:12:25,662 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 - Application started (Dev)
+2018-12-05 22:13:17,305 [WARN] from akka.util.ManifestInfo in application-akka.actor.default-dispatcher-6 - Detected possible incompatible versions on the classpath. Please note that a given Akka version MUST be the same across all modules of Akka that you are using, e.g. if you use [2.5.18] all other modules that are released together MUST be of the same version. Make sure you're using a compatible set of libraries.Possibly conflicting versions [2.5.18, 2.5.17] in libraries [akka-persistence:2.5.18, akka-protobuf:2.5.18, akka-actor:2.5.18, akka-slf4j:2.5.17, akka-stream:2.5.17]
+2018-12-05 22:13:17,332 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-25 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-12-05 22:13:17,354 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-25 - Application started (Dev)
