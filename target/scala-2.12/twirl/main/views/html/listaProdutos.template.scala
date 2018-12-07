@@ -61,7 +61,7 @@ Seq[Any](format.raw/*5.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Dec 07 14:13:36 BRT 2018
+                  DATE: Fri Dec 07 18:04:26 BRT 2018
                   SOURCE: /home/brunnom/Downloads/walmart-smack/app/views/listaProdutos.scala.html
                   HASH: 8fa9e163a91172a85466a66cad428e57bd3ac17c
                   MATRIX: 651->1|993->25|1119->58|1146->60|1173->79|1212->81|1243->86|1354->171|1391->192|1431->194|1467->203|1499->208|1527->215|1568->226|1600->231|1637->238

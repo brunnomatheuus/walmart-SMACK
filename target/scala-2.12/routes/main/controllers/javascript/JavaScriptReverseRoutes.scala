@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/brunnom/Downloads/walmart-smack/conf/routes
-// @DATE:Fri Dec 07 15:41:05 BRT 2018
+// @DATE:Fri Dec 07 18:04:26 BRT 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
