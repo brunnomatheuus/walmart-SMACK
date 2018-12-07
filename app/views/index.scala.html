@@ -1,25 +1,34 @@
-@()
 
 @main("Walmart") {
+
+
   <h1>LISTAR</h1>
-  <form>
-  	<button>Listar todos os produtos</button>
+  <form method="get" action="/produtos/geral" >
+  	<button type="submit">Listar todos os produtos</button>
   </form>
+
   <p></p>
-  <form>
+
+
+  <form method="get" action="/produtos/filtrado" >
 	  <span> Listar produtos do valor
-	  	<input id="menorValor"/>
-	  	 ao valor <input id="maiorValor"/>
+	  	<input type="number" name="min"/>
+	  	 ao valor <input type="number" name="max" />
 	  </span>
-	  <button>Listar</button>
+	  <button type="submit">Listar</button>
   </form>
+
+
+
   <hr/>
+
+
   <h1>COMPRAR</h1>
   <form>
   	<span>Comprar produto(TIPO)</span>
-  	<input id="tipoProduto"/>
+  	<input value="tipoProduto"/>
   	<p></p>
-  	Quantidade: <input id="qtd"/>
+  	Quantidade: <input value="qtd"/>
   	<button>Comprar</button>
   </form>
 }

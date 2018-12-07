@@ -1,0 +1,16 @@
+@import walmart.Produto
+@(
+        array: List[Produto]
+)
+
+@main("Lista geral") {
+    <form action="/">
+        <button>Página inicial</button>
+    </form>
+
+    <ul>
+    @for(produto <- array) {
+        <li>@produto</li>
+    }
+    </ul>
+}

@@ -1,5 +1,6 @@
 package controllers;
 
+import actors.HelloActor;
 import akka.actor.*;
 import play.mvc.*;
 import scala.compat.java8.FutureConverters;

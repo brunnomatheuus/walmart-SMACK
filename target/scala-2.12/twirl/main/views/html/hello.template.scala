@@ -52,8 +52,8 @@ Seq[Any](format.raw/*4.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Dec 04 16:27:19 BRT 2018
-                  SOURCE: /home/bruno/Downloads/Disciplinas/Concorrente/projetounidade3/app/views/hello.scala.html
+                  DATE: Fri Dec 07 09:33:02 BRT 2018
+                  SOURCE: /home/brunnom/Downloads/walmart-smack/app/views/hello.scala.html
                   HASH: 8345ef583e41bdb2914400d25467e8486b307f75
                   MATRIX: 948->1|1059->19|1086->21|1117->44|1156->46|1185->49|1215->54|1238->57|1274->64
                   LINES: 28->1|35->4|36->5|36->5|36->5|37->6|37->6|37->6|38->7

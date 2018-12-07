@@ -25,35 +25,44 @@ import play.core.j.PlayFormsMagicForJava._
 object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/():play.twirl.api.HtmlFormat.Appendable = {
+  def apply():play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*2.1*/("""
-"""),_display_(/*3.2*/main("Walmart")/*3.17*/ {_display_(Seq[Any](format.raw/*3.19*/("""
-  """),format.raw/*4.3*/("""<h1>LISTAR</h1>
-  <form>
-  	<button>Listar todos os produtos</button>
+Seq[Any](_display_(/*2.2*/main("Walmart")/*2.17*/ {_display_(Seq[Any](format.raw/*2.19*/("""
+
+
+  """),format.raw/*5.3*/("""<h1>LISTAR</h1>
+  <form method="get" action="/produtos/geral" >
+  	<button type="submit">Listar todos os produtos</button>
   </form>
+
   <p></p>
-  <form>
+
+
+  <form method="get" action="/produtos/filtrado" >
 	  <span> Listar produtos do valor
-	  	<input id="menorValor"/>
-	  	 ao valor <input id="maiorValor"/>
+	  	<input type="number" name="min"/>
+	  	 ao valor <input type="number" name="max" />
 	  </span>
-	  <button>Listar</button>
+	  <button type="submit">Listar</button>
   </form>
+
+
+
   <hr/>
+
+
   <h1>COMPRAR</h1>
   <form>
   	<span>Comprar produto(TIPO)</span>
-  	<input id="tipoProduto"/>
+  	<input value="tipoProduto"/>
   	<p></p>
-  	Quantidade: <input id="qtd"/>
+  	Quantidade: <input value="qtd"/>
   	<button>Comprar</button>
   </form>
-""")))}),format.raw/*25.2*/("""
+""")))}),format.raw/*34.2*/("""
 """))
       }
     }
@@ -70,11 +79,11 @@ Seq[Any](format.raw/*2.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Dec 05 22:13:13 BRT 2018
-                  SOURCE: /home/bruno/Downloads/Disciplinas/Concorrente/projetounidade3/app/views/index.scala.html
-                  HASH: 993d911d87cb6d206c10673b8779c84887dbbed2
-                  MATRIX: 941->1|1037->4|1064->6|1087->21|1126->23|1155->26|1621->462
-                  LINES: 28->1|33->2|34->3|34->3|34->3|35->4|56->25
+                  DATE: Fri Dec 07 15:32:04 BRT 2018
+                  SOURCE: /home/brunnom/Downloads/walmart-smack/app/views/index.scala.html
+                  HASH: c66ac30b92a0c93efec93c5f40332d702c29c32a
+                  MATRIX: 1030->2|1053->17|1092->19|1123->24|1731->602
+                  LINES: 33->2|33->2|33->2|36->5|65->34
                   -- GENERATED --
               */
           

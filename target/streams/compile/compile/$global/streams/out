@@ -1,8 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0m/home/bruno/Downloads/Disciplinas/Concorrente/projetounidade3/app/controllers/Application.java:22:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class SayHello[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class controllers.Application[0m
-[0m[[0m[31merror[0m] [0m[0m        return FutureConverters.toJava(ask(helloActor, new SayHello(name), 1000))[0m
-[0m[[0m[31merror[0m] [0m[0m/home/bruno/Downloads/Disciplinas/Concorrente/projetounidade3/app/controllers/HelloActor.java:15:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class SayHello[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class controllers.HelloActor[0m
-[0m[[0m[31merror[0m] [0m[0m        .match(SayHello.class, hello -> {[0m
+[0m[[0m[0minfo[0m] [0m[0m/home/brunnom/Downloads/walmart-smack/app/controllers/BuscaFiltrado.java: /home/brunnom/Downloads/walmart-smack/app/controllers/BuscaFiltrado.java uses unchecked or unsafe operations.[0m
+[0m[[0m[0minfo[0m] [0m[0m/home/brunnom/Downloads/walmart-smack/app/controllers/BuscaFiltrado.java: Recompile with -Xlint:unchecked for details.[0m

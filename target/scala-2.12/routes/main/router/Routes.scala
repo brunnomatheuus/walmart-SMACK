@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/bruno/Downloads/Disciplinas/Concorrente/projetounidade3/conf/routes
-// @DATE:Tue Dec 04 16:18:57 BRT 2018
+// @SOURCE:/home/brunnom/Downloads/walmart-smack/conf/routes
+// @DATE:Fri Dec 07 15:41:05 BRT 2018
 
 package router
 
@@ -15,27 +15,35 @@ import _root_.play.libs.F
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
-  HomeController_0: controllers.HomeController,
+  HomeController_1: controllers.HomeController,
   // @LINE:9
-  Assets_2: controllers.Assets,
+  Assets_3: controllers.Assets,
   // @LINE:11
-  Application_1: controllers.Application,
+  Application_4: controllers.Application,
+  // @LINE:13
+  BuscarGeral_2: controllers.BuscarGeral,
+  // @LINE:15
+  BuscaFiltrado_0: controllers.BuscaFiltrado,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
-    HomeController_0: controllers.HomeController,
+    HomeController_1: controllers.HomeController,
     // @LINE:9
-    Assets_2: controllers.Assets,
+    Assets_3: controllers.Assets,
     // @LINE:11
-    Application_1: controllers.Application
-  ) = this(errorHandler, HomeController_0, Assets_2, Application_1, "/")
+    Application_4: controllers.Application,
+    // @LINE:13
+    BuscarGeral_2: controllers.BuscarGeral,
+    // @LINE:15
+    BuscaFiltrado_0: controllers.BuscaFiltrado
+  ) = this(errorHandler, HomeController_1, Assets_3, Application_4, BuscarGeral_2, BuscaFiltrado_0, "/")
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_0, Assets_2, Application_1, prefix)
+    new Routes(errorHandler, HomeController_1, Assets_3, Application_4, BuscarGeral_2, BuscaFiltrado_0, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -46,6 +54,8 @@ class Routes(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """actor/""" + "$" + """msg<.+>""", """controllers.Application.sayHello(msg:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """produtos/geral""", """controllers.BuscarGeral.BuscaGeral()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """produtos/filtrado""", """controllers.BuscaFiltrado.BuscaFiltrado()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -58,7 +68,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_HomeController_index0_invoker = createInvoker(
-    HomeController_0.index,
+    HomeController_1.index,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -76,7 +86,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
   private[this] lazy val controllers_Assets_versioned1_invoker = createInvoker(
-    Assets_2.versioned(fakeValue[String], fakeValue[Asset]),
+    Assets_3.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -94,7 +104,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("actor/"), DynamicPart("msg", """.+""",false)))
   )
   private[this] lazy val controllers_Application_sayHello2_invoker = createInvoker(
-    Application_1.sayHello(fakeValue[String]),
+    Application_4.sayHello(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Application",
@@ -107,25 +117,73 @@ class Routes(
     )
   )
 
+  // @LINE:13
+  private[this] lazy val controllers_BuscarGeral_BuscaGeral3_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("produtos/geral")))
+  )
+  private[this] lazy val controllers_BuscarGeral_BuscaGeral3_invoker = createInvoker(
+    BuscarGeral_2.BuscaGeral(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.BuscarGeral",
+      "BuscaGeral",
+      Nil,
+      "GET",
+      this.prefix + """produtos/geral""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:15
+  private[this] lazy val controllers_BuscaFiltrado_BuscaFiltrado4_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("produtos/filtrado")))
+  )
+  private[this] lazy val controllers_BuscaFiltrado_BuscaFiltrado4_invoker = createInvoker(
+    BuscaFiltrado_0.BuscaFiltrado(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.BuscaFiltrado",
+      "BuscaFiltrado",
+      Nil,
+      "GET",
+      this.prefix + """produtos/filtrado""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
     // @LINE:6
     case controllers_HomeController_index0_route(params@_) =>
       call { 
-        controllers_HomeController_index0_invoker.call(HomeController_0.index)
+        controllers_HomeController_index0_invoker.call(HomeController_1.index)
       }
   
     // @LINE:9
     case controllers_Assets_versioned1_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned1_invoker.call(Assets_2.versioned(path, file))
+        controllers_Assets_versioned1_invoker.call(Assets_3.versioned(path, file))
       }
   
     // @LINE:11
     case controllers_Application_sayHello2_route(params@_) =>
       call(params.fromPath[String]("msg", None)) { (msg) =>
-        controllers_Application_sayHello2_invoker.call(Application_1.sayHello(msg))
+        controllers_Application_sayHello2_invoker.call(Application_4.sayHello(msg))
+      }
+  
+    // @LINE:13
+    case controllers_BuscarGeral_BuscaGeral3_route(params@_) =>
+      call { 
+        controllers_BuscarGeral_BuscaGeral3_invoker.call(BuscarGeral_2.BuscaGeral())
+      }
+  
+    // @LINE:15
+    case controllers_BuscaFiltrado_BuscaFiltrado4_route(params@_) =>
+      call { 
+        controllers_BuscaFiltrado_BuscaFiltrado4_invoker.call(BuscaFiltrado_0.BuscaFiltrado())
       }
   }
 }
