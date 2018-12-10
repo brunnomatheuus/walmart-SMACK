@@ -6,6 +6,7 @@ public class Produto implements Serializable {
     private int id;
     private String nome;
     private double preco;
+    private int quantidade;
 
     public int getQuantidade() {
         return quantidade;
@@ -14,8 +15,6 @@ public class Produto implements Serializable {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
-
-    private int quantidade;
 
     public Produto(){
 

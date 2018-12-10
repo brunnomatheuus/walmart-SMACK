@@ -6,12 +6,14 @@ import com.datastax.spark.connector.japi.CassandraJavaUtil;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import scala.collection.Seq;
 import walmart.Produto;
 import walmart.Produtos;
 
 import java.util.ArrayList;
 
 import static com.datastax.spark.connector.japi.CassandraJavaUtil.mapRowTo;
+import static com.datastax.spark.connector.japi.CassandraJavaUtil.mapToRow;
 
 public class CompraActor extends AbstractActor {
 
@@ -40,19 +42,28 @@ public class CompraActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(String.class, msg -> {
-                    String[] msgs = msg.split("-");
+            .match(String.class, msg -> {
+                String[] msgs = msg.split("-");
 
 
-                    JavaRDD<Produto> produtoRdd = CassandraJavaUtil.javaFunctions(sc)
-                            .cassandraTable("projetoconcorrente", "produtos", mapRowTo(Produto.class))
-                            .select("id", "nome", "preco", "quantidade")
-                            .where("preco>=? AND preco<=?", array.getMin(), array.getMax())
-                            .
+                JavaRDD<Produto> produtoRdd = CassandraJavaUtil.javaFunctions(sc)
+                        .cassandraTable("projetoconcorrente", "produtos", mapRowTo(Produto.class))
+                        .select("id", "nome", "preco", "quantidade")
+                        .where("id=?", msgs[0]);
+
+                ArrayList<Produto> produtos = new ArrayList<>();
+                for (Produto produto : produtoRdd.collect()){
+                    produtos.add(produto);
+                }
+
+                produtos.get(0).setQuantidade(produtos.get(0).getQuantidade() - Integer.valueOf(msgs[1]));
 
 
-                    sender().tell("ok", self());
-                })
-                .build();
+                CassandraJavaUtil.javaFunctions(sc.parallelize(produtos))
+                        .writerBuilder("projetoconcorrente", "produtos", mapToRow(Produto.class)).saveToCassandra();
+
+                sender().tell("ok", getSelf());
+            })
+            .build();
     }
 }

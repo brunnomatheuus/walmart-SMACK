@@ -55,7 +55,7 @@ public class BuscaFiltradoActor extends AbstractActor {
                         produtos.add(produto);
                     }
 
-                    sender().tell(produtos, self());
+                    sender().tell(produtos, getSelf());
                 })
                 .build();
     }

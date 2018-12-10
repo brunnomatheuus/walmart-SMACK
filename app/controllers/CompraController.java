@@ -5,6 +5,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.index;
 import scala.compat.java8.FutureConverters;
 
 import javax.inject.Inject;
@@ -30,7 +31,7 @@ public class CompraController extends Controller {
 
         ActorRef compraActor = system.actorOf(CompraActor.getProps());
 
-        return FutureConverters.toJava(ask(compraActor, msg, 1000))
-                .thenApply(response -> ok(views.html.index.render()));
+        return FutureConverters.toJava(ask(compraActor, msg, 60000))
+                .thenApply(response -> ok(index.render()));
     }
 }

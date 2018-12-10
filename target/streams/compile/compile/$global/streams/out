@@ -1,8 +1,8 @@
 [0m[[0m[31merror[0m] [0m[0m/home/brunnom/Downloads/walmart-smack/app/actors/CompraActor.java:50:1: cannot find symbol[0m
 [0m[[0m[31merror[0m] [0m[0m  symbol:   variable array[0m
 [0m[[0m[31merror[0m] [0m[0m  location: class actors.CompraActor[0m
-[0m[[0m[31merror[0m] [0m[0m                            .where("preco>=? AND preco<=?", array.getMin(), array.getMax());[0m
+[0m[[0m[31merror[0m] [0m[0m                            .where("preco>=? AND preco<=?", array.getMin(), array.getMax())[0m
 [0m[[0m[31merror[0m] [0m[0m/home/brunnom/Downloads/walmart-smack/app/actors/CompraActor.java:50:1: cannot find symbol[0m
 [0m[[0m[31merror[0m] [0m[0m  symbol:   variable array[0m
 [0m[[0m[31merror[0m] [0m[0m  location: class actors.CompraActor[0m
-[0m[[0m[31merror[0m] [0m[0m                            .where("preco>=? AND preco<=?", array.getMin(), array.getMax());[0m
+[0m[[0m[31merror[0m] [0m[0m                            .where("preco>=? AND preco<=?", array.getMin(), array.getMax())[0m
