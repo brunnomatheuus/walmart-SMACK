@@ -10,6 +10,8 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 GET     /actor/*msg              controllers.Application.sayHello(msg: String)
 
-GET     /produtos/geral             controllers.BuscarGeral.BuscaGeral()
+GET     /produtos/geral             controllers.BuscarGeralController.BuscaGeral()
 
-GET     /produtos/filtrado         controllers.BuscaFiltrado.BuscaFiltrado()
+GET     /produtos/filtrado         controllers.BuscaFiltradoController.BuscaFiltrado()
+
+GET     /produtos/comprar          controllers.CompraController.Compra()

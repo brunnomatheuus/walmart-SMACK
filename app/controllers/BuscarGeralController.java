@@ -18,12 +18,12 @@ import java.util.concurrent.CompletionStage;
 import static akka.pattern.Patterns.ask;
 
 @Singleton
-public class BuscarGeral extends Controller {
+public class BuscarGeralController extends Controller {
 
     static private ActorSystem system;
 
     @Inject
-    public BuscarGeral(ActorSystem system) {
+    public BuscarGeralController(ActorSystem system) {
         this.system = system;
     }
 

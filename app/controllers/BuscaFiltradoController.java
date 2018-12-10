@@ -19,12 +19,12 @@ import java.util.concurrent.CompletionStage;
 
 import static akka.pattern.Patterns.ask;
 
-public class BuscaFiltrado extends Controller {
+public class BuscaFiltradoController extends Controller {
 
     final ActorRef buscaFiltradoActor;
 
     @Inject
-    public BuscaFiltrado(ActorSystem system) {
+    public BuscaFiltradoController(ActorSystem system) {
         buscaFiltradoActor = system.actorOf(BuscaFiltradoActor.getProps());
     }
 

@@ -24,11 +24,11 @@
 
 
   <h1>COMPRAR</h1>
-  <form>
+  <form method="get" action="/produtos/comprar">
   	<span>Comprar produto(TIPO)</span>
-  	<input value="tipoProduto"/>
+  	<input type="number" name="tipoProduto"/>
   	<p></p>
-  	Quantidade: <input value="qtd"/>
-  	<button>Comprar</button>
+  	Quantidade: <input type="number" name="quantidade"/>
+  	<button type="submit">Comprar</button>
   </form>
 }

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/brunnom/Downloads/walmart-smack/conf/routes
-// @DATE:Fri Dec 07 18:04:26 BRT 2018
+// @DATE:Mon Dec 10 16:33:15 BRT 2018
 
 import play.api.mvc.Call
 
@@ -27,7 +27,7 @@ package controllers {
   }
 
   // @LINE:15
-  class ReverseBuscaFiltrado(_prefix: => String) {
+  class ReverseBuscaFiltradoController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
@@ -71,8 +71,23 @@ package controllers {
   
   }
 
+  // @LINE:17
+  class ReverseCompraController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:17
+    def Compra(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "produtos/comprar")
+    }
+  
+  }
+
   // @LINE:13
-  class ReverseBuscarGeral(_prefix: => String) {
+  class ReverseBuscarGeralController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }

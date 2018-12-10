@@ -55,15 +55,6 @@ public class BuscaFiltradoActor extends AbstractActor {
                         produtos.add(produto);
                     }
 
-
-                    /*for(int i = 0; i < produtos.size(); i++){
-                        if(produtos.get(i).getPreco() < array.min || produtos.get(i).getPreco() > array.max){
-                            System.out.println(array.min + ", " + array.max);
-                            produtos.remove(produtos.get(i));
-
-                        }
-                    }*/
-
                     sender().tell(produtos, self());
                 })
                 .build();

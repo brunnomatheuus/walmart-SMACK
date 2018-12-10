@@ -13,17 +13,14 @@ import java.util.ArrayList;
 
 import static com.datastax.spark.connector.japi.CassandraJavaUtil.mapRowTo;
 
-
-public class BuscaGeralActor extends AbstractActor {
+public class CompraActor extends AbstractActor {
 
     private SparkConf conf;
     private JavaSparkContext sc;
 
     public static Props getProps() {
-        return Props.create(BuscaGeralActor.class);
+        return Props.create(CompraActor.class);
     }
-
-    public BuscaGeralActor(){ }
 
     @Override
     public void preStart() {
@@ -43,23 +40,18 @@ public class BuscaGeralActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(Produtos.class, array -> {
-
+                .match(String.class, msg -> {
+                    String[] msgs = msg.split("-");
 
 
                     JavaRDD<Produto> produtoRdd = CassandraJavaUtil.javaFunctions(sc)
-                        .cassandraTable("projetoconcorrente", "produtos", mapRowTo(Produto.class))
-                        .select("id", "nome", "preco", "quantidade")
-                        .where("quantidade>=?", 0);
-
-                    ArrayList<Produto> produtos = new ArrayList<>();
-
-                    for (Produto produto : produtoRdd.collect()){
-                        produtos.add(produto);
-                    }
+                            .cassandraTable("projetoconcorrente", "produtos", mapRowTo(Produto.class))
+                            .select("id", "nome", "preco", "quantidade")
+                            .where("preco>=? AND preco<=?", array.getMin(), array.getMax())
+                            .
 
 
-                    sender().tell(produtos, getSelf());
+                    sender().tell("ok", self());
                 })
                 .build();
     }

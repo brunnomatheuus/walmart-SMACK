@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/brunnom/Downloads/walmart-smack/conf/routes
-// @DATE:Fri Dec 07 18:04:26 BRT 2018
+// @DATE:Mon Dec 10 16:33:15 BRT 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -32,7 +32,7 @@ package controllers.javascript {
   }
 
   // @LINE:15
-  class ReverseBuscaFiltrado(_prefix: => String) {
+  class ReverseBuscaFiltradoController(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
@@ -41,7 +41,7 @@ package controllers.javascript {
   
     // @LINE:15
     def BuscaFiltrado: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.BuscaFiltrado.BuscaFiltrado",
+      "controllers.BuscaFiltradoController.BuscaFiltrado",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "produtos/filtrado"})
@@ -91,8 +91,28 @@ package controllers.javascript {
   
   }
 
+  // @LINE:17
+  class ReverseCompraController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:17
+    def Compra: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CompraController.Compra",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "produtos/comprar"})
+        }
+      """
+    )
+  
+  }
+
   // @LINE:13
-  class ReverseBuscarGeral(_prefix: => String) {
+  class ReverseBuscarGeralController(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
@@ -101,7 +121,7 @@ package controllers.javascript {
   
     // @LINE:13
     def BuscaGeral: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.BuscarGeral.BuscaGeral",
+      "controllers.BuscarGeralController.BuscaGeral",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "produtos/geral"})

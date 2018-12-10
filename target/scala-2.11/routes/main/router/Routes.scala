@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/brunnom/Downloads/walmart-smack/conf/routes
-// @DATE:Fri Dec 07 18:04:26 BRT 2018
+// @DATE:Mon Dec 10 16:33:15 BRT 2018
 
 package router
 
@@ -17,13 +17,15 @@ class Routes(
   // @LINE:6
   HomeController_1: controllers.HomeController,
   // @LINE:9
-  Assets_3: controllers.Assets,
+  Assets_4: controllers.Assets,
   // @LINE:11
-  Application_4: controllers.Application,
+  Application_5: controllers.Application,
   // @LINE:13
-  BuscarGeral_2: controllers.BuscarGeral,
+  BuscarGeralController_2: controllers.BuscarGeralController,
   // @LINE:15
-  BuscaFiltrado_0: controllers.BuscaFiltrado,
+  BuscaFiltradoController_0: controllers.BuscaFiltradoController,
+  // @LINE:17
+  CompraController_3: controllers.CompraController,
   val prefix: String
 ) extends GeneratedRouter {
 
@@ -32,18 +34,20 @@ class Routes(
     // @LINE:6
     HomeController_1: controllers.HomeController,
     // @LINE:9
-    Assets_3: controllers.Assets,
+    Assets_4: controllers.Assets,
     // @LINE:11
-    Application_4: controllers.Application,
+    Application_5: controllers.Application,
     // @LINE:13
-    BuscarGeral_2: controllers.BuscarGeral,
+    BuscarGeralController_2: controllers.BuscarGeralController,
     // @LINE:15
-    BuscaFiltrado_0: controllers.BuscaFiltrado
-  ) = this(errorHandler, HomeController_1, Assets_3, Application_4, BuscarGeral_2, BuscaFiltrado_0, "/")
+    BuscaFiltradoController_0: controllers.BuscaFiltradoController,
+    // @LINE:17
+    CompraController_3: controllers.CompraController
+  ) = this(errorHandler, HomeController_1, Assets_4, Application_5, BuscarGeralController_2, BuscaFiltradoController_0, CompraController_3, "/")
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_1, Assets_3, Application_4, BuscarGeral_2, BuscaFiltrado_0, prefix)
+    new Routes(errorHandler, HomeController_1, Assets_4, Application_5, BuscarGeralController_2, BuscaFiltradoController_0, CompraController_3, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -54,8 +58,9 @@ class Routes(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """actor/""" + "$" + """msg<.+>""", """controllers.Application.sayHello(msg:String)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """produtos/geral""", """controllers.BuscarGeral.BuscaGeral()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """produtos/filtrado""", """controllers.BuscaFiltrado.BuscaFiltrado()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """produtos/geral""", """controllers.BuscarGeralController.BuscaGeral()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """produtos/filtrado""", """controllers.BuscaFiltradoController.BuscaFiltrado()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """produtos/comprar""", """controllers.CompraController.Compra()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -86,7 +91,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
   private[this] lazy val controllers_Assets_versioned1_invoker = createInvoker(
-    Assets_3.versioned(fakeValue[String], fakeValue[Asset]),
+    Assets_4.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -104,7 +109,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("actor/"), DynamicPart("msg", """.+""",false)))
   )
   private[this] lazy val controllers_Application_sayHello2_invoker = createInvoker(
-    Application_4.sayHello(fakeValue[String]),
+    Application_5.sayHello(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Application",
@@ -118,14 +123,14 @@ class Routes(
   )
 
   // @LINE:13
-  private[this] lazy val controllers_BuscarGeral_BuscaGeral3_route = Route("GET",
+  private[this] lazy val controllers_BuscarGeralController_BuscaGeral3_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("produtos/geral")))
   )
-  private[this] lazy val controllers_BuscarGeral_BuscaGeral3_invoker = createInvoker(
-    BuscarGeral_2.BuscaGeral(),
+  private[this] lazy val controllers_BuscarGeralController_BuscaGeral3_invoker = createInvoker(
+    BuscarGeralController_2.BuscaGeral(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
-      "controllers.BuscarGeral",
+      "controllers.BuscarGeralController",
       "BuscaGeral",
       Nil,
       "GET",
@@ -136,18 +141,36 @@ class Routes(
   )
 
   // @LINE:15
-  private[this] lazy val controllers_BuscaFiltrado_BuscaFiltrado4_route = Route("GET",
+  private[this] lazy val controllers_BuscaFiltradoController_BuscaFiltrado4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("produtos/filtrado")))
   )
-  private[this] lazy val controllers_BuscaFiltrado_BuscaFiltrado4_invoker = createInvoker(
-    BuscaFiltrado_0.BuscaFiltrado(),
+  private[this] lazy val controllers_BuscaFiltradoController_BuscaFiltrado4_invoker = createInvoker(
+    BuscaFiltradoController_0.BuscaFiltrado(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
-      "controllers.BuscaFiltrado",
+      "controllers.BuscaFiltradoController",
       "BuscaFiltrado",
       Nil,
       "GET",
       this.prefix + """produtos/filtrado""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:17
+  private[this] lazy val controllers_CompraController_Compra5_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("produtos/comprar")))
+  )
+  private[this] lazy val controllers_CompraController_Compra5_invoker = createInvoker(
+    CompraController_3.Compra(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CompraController",
+      "Compra",
+      Nil,
+      "GET",
+      this.prefix + """produtos/comprar""",
       """""",
       Seq()
     )
@@ -165,25 +188,31 @@ class Routes(
     // @LINE:9
     case controllers_Assets_versioned1_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned1_invoker.call(Assets_3.versioned(path, file))
+        controllers_Assets_versioned1_invoker.call(Assets_4.versioned(path, file))
       }
   
     // @LINE:11
     case controllers_Application_sayHello2_route(params@_) =>
       call(params.fromPath[String]("msg", None)) { (msg) =>
-        controllers_Application_sayHello2_invoker.call(Application_4.sayHello(msg))
+        controllers_Application_sayHello2_invoker.call(Application_5.sayHello(msg))
       }
   
     // @LINE:13
-    case controllers_BuscarGeral_BuscaGeral3_route(params@_) =>
+    case controllers_BuscarGeralController_BuscaGeral3_route(params@_) =>
       call { 
-        controllers_BuscarGeral_BuscaGeral3_invoker.call(BuscarGeral_2.BuscaGeral())
+        controllers_BuscarGeralController_BuscaGeral3_invoker.call(BuscarGeralController_2.BuscaGeral())
       }
   
     // @LINE:15
-    case controllers_BuscaFiltrado_BuscaFiltrado4_route(params@_) =>
+    case controllers_BuscaFiltradoController_BuscaFiltrado4_route(params@_) =>
       call { 
-        controllers_BuscaFiltrado_BuscaFiltrado4_invoker.call(BuscaFiltrado_0.BuscaFiltrado())
+        controllers_BuscaFiltradoController_BuscaFiltrado4_invoker.call(BuscaFiltradoController_0.BuscaFiltrado())
+      }
+  
+    // @LINE:17
+    case controllers_CompraController_Compra5_route(params@_) =>
+      call { 
+        controllers_CompraController_Compra5_invoker.call(CompraController_3.Compra())
       }
   }
 }
