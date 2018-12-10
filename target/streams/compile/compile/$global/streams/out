@@ -1,18 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0m/home/brunnom/Downloads/walmart-smack/app/actors/BuscaGeralActor.java:11:1: package com.datastax.spark.connector.japi does not exist[0m
-[0m[[0m[31merror[0m] [0m[0mimport static com.datastax.spark.connector.japi.CassandraJavaUtil.mapColumnTo;[0m
-[0m[[0m[31merror[0m] [0m[0m/home/brunnom/Downloads/walmart-smack/app/actors/BuscaGeralActor.java:11:1: static import only from classes and interfaces[0m
-[0m[[0m[31merror[0m] [0m[0mimport static com.datastax.spark.connector.japi.CassandraJavaUtil.mapColumnTo;[0m
-[0m[[0m[31merror[0m] [0m[0m/home/brunnom/Downloads/walmart-smack/app/actors/BuscaGeralActor.java:12:1: package com.datastax.spark.connector.japi does not exist[0m
-[0m[[0m[31merror[0m] [0m[0mimport static com.datastax.spark.connector.japi.CassandraJavaUtil.javaFunctions;[0m
-[0m[[0m[31merror[0m] [0m[0m/home/brunnom/Downloads/walmart-smack/app/actors/BuscaGeralActor.java:12:1: static import only from classes and interfaces[0m
-[0m[[0m[31merror[0m] [0m[0mimport static com.datastax.spark.connector.japi.CassandraJavaUtil.javaFunctions;[0m
-[0m[[0m[31merror[0m] [0m[0m/home/brunnom/Downloads/walmart-smack/app/actors/BuscaGeralActor.java:36:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   method mapColumnTo(java.lang.Class<walmart.Produto>)[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class actors.BuscaGeralActor[0m
-[0m[[0m[31merror[0m] [0m[0m                            .cassandraTable("projetoconcorrente", "produtos", mapColumnTo(Produto.class))[0m
-[0m[[0m[31merror[0m] [0m[0m/home/brunnom/Downloads/walmart-smack/app/actors/BuscaGeralActor.java:35:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   method javaFunctions(org.apache.spark.api.java.JavaSparkContext)[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class actors.BuscaGeralActor[0m
-[0m[[0m[31merror[0m] [0m[0m                    JavaRDD produtoRdd = javaFunctions(sc)[0m
 [0m[[0m[0minfo[0m] [0m[0m/home/brunnom/Downloads/walmart-smack/app/controllers/BuscaFiltrado.java: Some input files use unchecked or unsafe operations.[0m
 [0m[[0m[0minfo[0m] [0m[0m/home/brunnom/Downloads/walmart-smack/app/controllers/BuscaFiltrado.java: Recompile with -Xlint:unchecked for details.[0m

@@ -1,0 +1,4 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/brunnom/Downloads/walmart-smack/conf/logback.xml,/home/brunnom/Downloads/walmart-smack/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/brunnom/Downloads/walmart-smack/conf/application.conf,/home/brunnom/Downloads/walmart-smack/target/scala-2.11/classes/application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/brunnom/Downloads/walmart-smack/conf/routes,/home/brunnom/Downloads/walmart-smack/target/scala-2.11/classes/routes)[0m

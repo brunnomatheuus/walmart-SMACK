@@ -1,42 +1,59 @@
 package walmart;
 
-public class Produto {
-    private static int id;
-    private static String nome;
-    private static double preco;
+import java.io.Serializable;
 
-    public Produto(int id, String nome, double preco) {
+public class Produto implements Serializable {
+    private int id;
+    private String nome;
+    private double preco;
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    private int quantidade;
+
+    public Produto(){
+
+    }
+
+    public Produto(int id, String nome, double preco, int quantidade) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
+        this.quantidade = quantidade;
     }
 
-    public static int getId() {
+    public int getId() {
         return id;
     }
 
-    public static String getNome() {
+    public String getNome() {
         return nome;
     }
 
-    public static double getPreco() {
+    public double getPreco() {
         return preco;
     }
 
-    public static void setId(int id) {
-        Produto.id = id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public static void setNome(String nome) {
-        Produto.nome = nome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public static void setPreco(double preco) {
-        Produto.preco = preco;
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
     @Override
     public String toString() {
-        return "Tipo: " + this.id + " - Nome: " + this.nome + " - Preço: " + this.preco;
+        return "Tipo: " + this.id + " - Nome: " + this.nome + " - Preço: " + this.preco + " - Quantidade: " + this.quantidade;
     }
 }

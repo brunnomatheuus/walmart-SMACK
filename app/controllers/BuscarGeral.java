@@ -20,14 +20,16 @@ import static akka.pattern.Patterns.ask;
 @Singleton
 public class BuscarGeral extends Controller {
 
-    final ActorRef buscaGeralActor;
+    static private ActorSystem system;
 
     @Inject
     public BuscarGeral(ActorSystem system) {
-        buscaGeralActor = system.actorOf(BuscaGeralActor.getProps());
+        this.system = system;
     }
 
     public CompletionStage<Result> BuscaGeral() {
+
+        ActorRef buscaGeralActor = system.actorOf(BuscaGeralActor.getProps());
         return FutureConverters.toJava(ask(buscaGeralActor, new Produtos(), 1000))
                 .thenApply(response -> ok(listaProdutos.render( (ArrayList<Produto>) response )));
     }
