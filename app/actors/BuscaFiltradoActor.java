@@ -4,6 +4,7 @@ import akka.actor.AbstractActor;
 import akka.actor.Props;
 import com.datastax.spark.connector.japi.CassandraJavaUtil;
 import org.apache.spark.SparkConf;
+import org.apache.spark.SparkContext;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import walmart.Produto;
@@ -29,7 +30,7 @@ public class BuscaFiltradoActor extends AbstractActor {
                 .set("spark.driver.allowMultipleContexts", "true")
                 .setMaster("local");
 
-        sc = new JavaSparkContext(conf);
+        sc = new JavaSparkContext(SparkContext.getOrCreate(this.conf));
     }
 
     @Override

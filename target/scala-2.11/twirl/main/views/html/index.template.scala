@@ -79,7 +79,7 @@ Seq[Any](_display_(/*2.2*/main("Walmart")/*2.17*/ {_display_(Seq[Any](format.raw
 
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 10 16:41:54 BRT 2018
+                  DATE: Tue Dec 11 10:46:59 BRT 2018
                   SOURCE: /home/brunnom/Downloads/walmart-smack/app/views/index.scala.html
                   HASH: 583fb80b3eec4a917bcb748e2db020ba44290cb9
                   MATRIX: 1030->2|1053->17|1092->19|1123->24|1818->689

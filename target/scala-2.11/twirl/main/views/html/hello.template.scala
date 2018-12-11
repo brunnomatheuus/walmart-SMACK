@@ -52,7 +52,7 @@ Seq[Any](format.raw/*4.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 10 08:38:37 BRT 2018
+                  DATE: Tue Dec 11 10:46:59 BRT 2018
                   SOURCE: /home/brunnom/Downloads/walmart-smack/app/views/hello.scala.html
                   HASH: 8345ef583e41bdb2914400d25467e8486b307f75
                   MATRIX: 948->1|1059->19|1086->21|1117->44|1156->46|1185->49|1215->54|1238->57|1274->64

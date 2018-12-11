@@ -4,12 +4,14 @@ import akka.actor.AbstractActor;
 import akka.actor.Props;
 import com.datastax.spark.connector.japi.CassandraJavaUtil;
 import org.apache.spark.SparkConf;
+import org.apache.spark.SparkContext;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import walmart.Produto;
 import walmart.Produtos;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import static com.datastax.spark.connector.japi.CassandraJavaUtil.mapRowTo;
 
@@ -32,7 +34,7 @@ public class BuscaGeralActor extends AbstractActor {
                 .set("spark.driver.allowMultipleContexts", "true")
                 .setMaster("local");
 
-        sc = new JavaSparkContext(conf);
+        sc = new JavaSparkContext(SparkContext.getOrCreate(this.conf));
     }
 
     @Override
@@ -49,8 +51,7 @@ public class BuscaGeralActor extends AbstractActor {
 
                     JavaRDD<Produto> produtoRdd = CassandraJavaUtil.javaFunctions(sc)
                         .cassandraTable("projetoconcorrente", "produtos", mapRowTo(Produto.class))
-                        .select("id", "nome", "preco", "quantidade")
-                        .where("quantidade>=?", 0);
+                        .select("id", "nome", "preco", "quantidade");
 
                     ArrayList<Produto> produtos = new ArrayList<>();
 

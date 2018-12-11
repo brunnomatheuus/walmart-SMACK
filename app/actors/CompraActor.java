@@ -4,11 +4,10 @@ import akka.actor.AbstractActor;
 import akka.actor.Props;
 import com.datastax.spark.connector.japi.CassandraJavaUtil;
 import org.apache.spark.SparkConf;
+import org.apache.spark.SparkContext;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import scala.collection.Seq;
 import walmart.Produto;
-import walmart.Produtos;
 
 import java.util.ArrayList;
 
@@ -31,7 +30,7 @@ public class CompraActor extends AbstractActor {
                 .set("spark.driver.allowMultipleContexts", "true")
                 .setMaster("local");
 
-        sc = new JavaSparkContext(conf);
+        sc = new JavaSparkContext(SparkContext.getOrCreate(this.conf));
     }
 
     @Override
@@ -60,9 +59,10 @@ public class CompraActor extends AbstractActor {
 
 
                 CassandraJavaUtil.javaFunctions(sc.parallelize(produtos))
-                        .writerBuilder("projetoconcorrente", "produtos", mapToRow(Produto.class)).saveToCassandra();
+                        .writerBuilder("projetoconcorrente", "produtos", mapToRow(Produto.class))
+                        .saveToCassandra();
 
-                sender().tell("ok", getSelf());
+                sender().tell("", getSelf());
             })
             .build();
     }

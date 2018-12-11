@@ -9,10 +9,12 @@ import views.html.index;
 import scala.compat.java8.FutureConverters;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import java.util.concurrent.CompletionStage;
 
 import static akka.pattern.Patterns.ask;
 
+@Singleton
 public class CompraController extends Controller {
 
     static private ActorSystem system;
@@ -31,7 +33,7 @@ public class CompraController extends Controller {
 
         ActorRef compraActor = system.actorOf(CompraActor.getProps());
 
-        return FutureConverters.toJava(ask(compraActor, msg, 60000))
+        return FutureConverters.toJava(ask(compraActor, msg, 1000))
                 .thenApply(response -> ok(index.render()));
     }
 }

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/brunnom/Downloads/walmart-smack/conf/routes
-// @DATE:Mon Dec 10 16:33:15 BRT 2018
+// @DATE:Tue Dec 11 10:46:59 BRT 2018
 
 
 package router {

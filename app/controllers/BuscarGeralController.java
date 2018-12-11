@@ -30,7 +30,7 @@ public class BuscarGeralController extends Controller {
     public CompletionStage<Result> BuscaGeral() {
 
         ActorRef buscaGeralActor = system.actorOf(BuscaGeralActor.getProps());
-        return FutureConverters.toJava(ask(buscaGeralActor, new Produtos(), 1000))
+        return FutureConverters.toJava(ask(buscaGeralActor, new Produtos(), 5000))
                 .thenApply(response -> ok(listaProdutos.render( (ArrayList<Produto>) response )));
     }
 }
